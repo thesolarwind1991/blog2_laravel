@@ -107,9 +107,11 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="{{ route('admin.page.index') }}">Страницы <span class="sr-only">(current)</span></a>
                     </li>
+                    @perm('manage-posts')
                     <li class="nav-item ">
-                        <a class="nav-link" href="">Корзина <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('admin.trash.index') }}">Корзина <span class="sr-only">(current)</span></a>
                     </li>
+                    @endperm
 
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"

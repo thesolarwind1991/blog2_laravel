@@ -128,7 +128,7 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        $comment->delete();
+        $comment->forceDelete();
         $redirect = back();
         if (session('preview')) {
             $redirect = $redirect->withFragment('comment-list');

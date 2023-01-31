@@ -20,6 +20,7 @@ use App\Http\Controllers\User\PostController as UserPostController;
 use App\Http\Controllers\User\CommentController as USerCommentController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\TrashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -212,4 +213,14 @@ Route::group([
 
     //загрузка изображения в редакторе
     Route::post('ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.image-upload');
+
+    /*
+     * Восстановление постов блога
+     */
+    Route::get('trash/index', [TrashController::class, 'index'])
+        ->name('trash.index');
+    Route::get('trash/restore/{id}', [TrashController::class, 'restore'])
+        ->name('trash.restore');
+    Route::delete('trash/destroy/{id}', [TrashController::class, 'destroy'])
+        ->name('trash.destroy');
 });

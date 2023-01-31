@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="no-js">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title ?? env('APP_NAME') }}</title>
@@ -55,21 +54,6 @@
                 <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="img" class="fh5co_logo_width"/></a>
             </div>
             <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
-                <!--<div class="text-center d-inline-block">
-                    <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div></a>
-                </div>
-                <div class="text-center d-inline-block">
-                    <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div></a>
-                </div>
-                <div class="text-center d-inline-block">
-                    <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div></a>
-                </div>
-                <div class="text-center d-inline-block">
-                    <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
-                </div>
-                <div class="text-center d-inline-block">
-                    <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
-                </div>-->
                 <div class="d-inline-block text-center dd_position_relative">
                     <form action="{{ route('blog.search') }}" class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" name="query"

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\ImageUploader;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
@@ -143,7 +144,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $this->imageSaver->remove($post);
+        // удаляем сам пост блога из базы данных
         $post->delete();
         //пост может быть удален в режиме пред.просмотра или из панели
         //управления, так что и редирект после удаления будет разным
