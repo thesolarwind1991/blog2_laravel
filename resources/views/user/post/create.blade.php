@@ -5,4 +5,5 @@
     <form method="post" action="{{ route('user.post.store') }}" enctype="multipart/form-data">
         @include('admin.part.form')
     </form>
+    <script src="{{ asset('js/back.js') }}"></script>
 @endsection

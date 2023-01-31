@@ -13,7 +13,13 @@
             </h1>
         </div>
         <div class="card-body">
-            <img src="http://via.placeholder.com/1000x300" alt="" class="img-fluid">
+            <!--<img src="http://via.placeholder.com/1000x300" alt="" class="img-fluid">-->
+            @if ($post->image)
+                <img style="width: 100%"src="{{ asset('../storage/app/post/image/'.$post->image) }}" alt="{{ $post->name }}" />
+            @else
+                <img style="width: 100%" src="{{ asset('images/camila-cordeiro-114636.jpg') }}" alt=""/>
+            @endif
+
             @perm('manage-posts')
             {!! $post->content !!}
             @else

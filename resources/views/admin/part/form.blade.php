@@ -21,7 +21,7 @@
 </div>
 <div class="form-group">
     <label for="excerpt">Абзац из текста</label>
-    <textarea class="form-control ckeditor" name="excerpt" placeholder="Анонс поста"
+    <textarea class="form-control" name="excerpt" placeholder="Анонс поста"
               required maxlength="500">{{ old('excerpt') ?? $post->excerpt ?? '' }}</textarea>
 </div>
 <div class="form-group">

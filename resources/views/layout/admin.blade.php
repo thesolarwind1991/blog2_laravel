@@ -18,7 +18,9 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('css/style_1.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->
     <script src="{{ asset('js/modernizr-3.5.0.min.js') }}"></script>
+
 </head>
 <body>
 <div class="container-fluid fh5co_header_bg">
@@ -187,7 +189,6 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
@@ -197,16 +198,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
+
 <!-- Waypoints -->
 <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
 <!-- Main -->
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function () {
         $('.ckeditor').ckeditor();
     });
-</script>
+</script>-->
 <script type="text/javascript">
     CKEDITOR.replace('content', {
         filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",

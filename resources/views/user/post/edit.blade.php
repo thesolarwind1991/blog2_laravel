@@ -7,4 +7,5 @@
         @method('PUT')
         @include('admin.part.form')
     </form>
+    <script src="{{ asset('js/back.js') }}"></script>
 @endsection

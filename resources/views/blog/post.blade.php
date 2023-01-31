@@ -6,7 +6,11 @@
     <div>
         <div class="overlay"></div>
         <div class="page-title">
-            <img style="width: 100%" src="{{ asset('images/camila-cordeiro-114636.jpg') }}" alt="{{ $post->name }}">
+            @if ($post->image)
+                <img style="width: 100%" src="{{ asset('../storage/app/post/image/'.$post->image) }}" alt="{{ $post->name }}" width="480"/>
+            @else
+                <img style="width: 100%" src="{{ asset('images/camila-cordeiro-114636.jpg') }}" alt=""/>
+            @endif
             <span>{{ $post->created_at }}</span>
             <h2>{{ $post->name }}</h2>
         </div>

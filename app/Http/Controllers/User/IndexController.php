@@ -20,13 +20,17 @@ class IndexController extends Controller
     }
 
     public function index() {
-        $user = User::find(auth()->user()->id);
+        /*$user = User::find(auth()->user()->id);
         $admin = false;
 
         foreach ($user->roles as $role) {
             if (($role->id == 1) || ($role->id == 2))
                 $admin = true;
-        }
+        }*/
+
+        $perms = ['manage-posts', 'manage-comments', 'manage-tags',
+                 'manage-users', 'manage-roles', 'manage-pages'];
+        $admin = auth()->user()->hasAnyPerms(...$perms);
 
         return view('user.index', compact('admin'));
     }

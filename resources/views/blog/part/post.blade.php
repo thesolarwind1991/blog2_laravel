@@ -2,7 +2,12 @@
     <div class="col-md-5">
         <div class="fh5co_hover_news_img">
             <div class="fh5co_news_img">
-                <img src="{{ asset('images/nathan-mcbride-229637.jpg') }}" alt=""/></div>
+                @if ($post->image)
+                  <img src="{{ asset('../storage/app/post/image/'.$post->image) }}" alt="{{ $post->name }}" width="480"/>
+                @else
+                    <img src="{{ asset('images/nathan-mcbride-229637.jpg') }}" alt=""/>
+                @endif
+            </div>
             <div></div>
         </div>
     </div>
