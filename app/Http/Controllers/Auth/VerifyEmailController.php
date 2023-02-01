@@ -33,6 +33,8 @@ class VerifyEmailController extends Controller
 
         //если же все проверки пройдены, активируем аккаунт
         $user->update(['email_verified_at' => Carbon::now()]);
+        // назначаем роль для нового пользователя
+        $user->assignRoles('user');
         return redirect()
             ->route('auth.login')
             ->with('success', 'Вы успешно подтвердили свой адрес почты');

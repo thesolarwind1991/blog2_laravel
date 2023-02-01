@@ -93,7 +93,12 @@ class RoleController extends Controller
         }
 
         $this->validator($request->all(), $role->id)->validate();
-        $role->update($request->all());
+        if (in_array($role->id, [2, 3])) {
+            $role->update($request->except('slug'));
+        } else {
+            $role->update($request->all());
+        }
+
         $role->permissions()->sync($request->perms ?? []);
         return redirect()
             ->route('admin.role.index')
@@ -109,11 +114,14 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        if ($role->id === 1) {
+        if (in_array($role->id, [1, 2, 3])) {
             return redirect()
                 ->route('admin.role.index')
                 ->withErrors('Эту роль нельзя удалить');
         }
+        $role->delete();
+        return redirect()->route('admin.role.index')
+            ->with('success', 'Роль была успешно удалена');
     }
 
     /*
